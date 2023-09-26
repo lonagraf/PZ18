@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PZ18/App.axaml" value="PZ18/PZ18.csproj" />
+        <entry key="PZ18/EditWindow.axaml" value="PZ18/PZ18.csproj" />
+        <entry key="PZ18/GroupsWindow.axaml" value="PZ18/PZ18.csproj" />
+        <entry key="PZ18/MainWindow.axaml" value="PZ18/PZ18.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PZ18.MainWindow"
+        Title="PZ18">
+    <Grid>
+        <DataGrid Name="StudentGrid" x:CompileBindings="False" Margin="0 35 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Группа" Binding="{Binding group_name}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="GroupsWindowBtn" Content="Группы" Click="GroupsWindowBtn_OnClick"/>
+        <WrapPanel>
+        <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"/>
+        <Button x:Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_OnClick"/>
+        </WrapPanel>
+    </Grid>
+</Window>

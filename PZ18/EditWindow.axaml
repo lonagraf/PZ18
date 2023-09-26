@@ -1,0 +1,14 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PZ18.EditWindow"
+        Title="EditWindow">
+    <StackPanel>
+        <TextBox Name="surnameTextBox" Text="Surname" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+        <TextBox Name="nameTextBox" Text="Name" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+        <TextBox Name="groupTextBox" Text="Group" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+        <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_OnClick"></Button>
+    </StackPanel>
+</Window>
