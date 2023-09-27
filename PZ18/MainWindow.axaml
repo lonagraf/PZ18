@@ -18,6 +18,15 @@
         <WrapPanel>
         <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_OnClick"/>
         <Button x:Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_OnClick"/>
+        <ComboBox Name="FilterComboBox" Width="150" x:CompileBindings="False" SelectionChanged="FilterComboBox_OnSelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding group_name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Сортировка" Click="Button_OnClick"/>
+        <TextBox Name="txtSearch" Width="150" TextChanged="TxtSearch_OnTextChanged"/>
         </WrapPanel>
     </Grid>
 </Window>

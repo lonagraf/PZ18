@@ -26,7 +26,7 @@ public partial class EditWindow : MainWindow
         string newGroupName = groupTextBox.Text;
         _students.Update(newSurname, newName, newGroupName);
         this.Close();
-        ShowTable();
+        ShowTable(fullTable);
     }
     
 }
