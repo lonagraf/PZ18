@@ -12,17 +12,17 @@ namespace PZ18;
 
 public partial class MainWindow : Window
 {
-    protected string _connString = "server=localhost;database=pz18;port=3306;User Id=root;password=IGraf123*;Max Pool Size=100";
+    protected string _connString = "server=10.10.1.24;database=pro1_4;port=3306;User Id=user_01;password=user01pro;Max Pool Size=100";
     private List<Students> _students;
     private MySqlConnection _connection;
-    public string fullTable = "select id, surname, name, group_name from pz18.students\njoin pz18.`groups` g on g.group_id = students.group_id;";
+    private List<Groups> _groups;
+    public string fullTable = "select id, surname, name, group_name from pro1_4.students\njoin pro1_4.`groups` g on g.group_id = students.group_id;";
 
     public MainWindow()
     {
         InitializeComponent();
-        //string fullTable = "select id, surname, name, group_name from pz18.students\njoin pz18.`groups` g on g.group_id = students.group_id;";
         ShowTable(fullTable);
-        FilterComboBox.ItemsSource = _students;
+        FilterComboBox.ItemsSource = _students;;
     }
 
     public void ShowTable(string sql)
@@ -89,13 +89,13 @@ public partial class MainWindow : Window
         using (MySqlConnection connection = new MySqlConnection(_connString))
         {
             connection.Open();
-            string sql = "DELETE FROM pz18.students WHERE id = @StudentId";
+            string sql = "DELETE FROM pro1_4.students WHERE id = @StudentId";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@StudentId", id);
             command.ExecuteNonQuery();
         }
     }
-
+    
     private void FilterComboBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         var filterComboBox = (ComboBox)sender;
@@ -106,15 +106,19 @@ public partial class MainWindow : Window
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        string orderBy =
-            "select id, surname, name, group_name from pz18.students join pz18.`groups` g on g.group_id = students.group_id order by group_name;";
-        ShowTable(orderBy);
+        /*string orderBy =
+            "select id, surname, name, group_name from pro1_4.students join pro1_4.`groups` g on g.group_id = students.group_id order by group_name;";*/
+        //ShowTable(orderBy);
+        List<Students> OrderBy = _students.OrderBy(x => x.group_name).ToList();
+        StudentGrid.ItemsSource = OrderBy;
     }
 
     private void TxtSearch_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        string searchSql = "select id, surname, name, group_name from pz18.students join pz18.`groups` g on g.group_id = students.group_id where surname like '%" +
-                           txtSearch.Text + "%';";
-        ShowTable(searchSql);
+        /*string searchSql = "select id, surname, name, group_name from pro1_4.students join pro1_4.`groups` g on g.group_id = students.group_id where surname like '%" +
+                            txtSearch.Text + "%';";*/
+        //ShowTable(searchSql);
+        List<Students> Search = _students.Where(x => x.surname.Contains(txtSearch.Text)).ToList();
+        StudentGrid.ItemsSource = Search;
     }
 }

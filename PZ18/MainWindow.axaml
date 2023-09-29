@@ -27,6 +27,7 @@
         </ComboBox>
         <Button Content="Сортировка" Click="Button_OnClick"/>
         <TextBox Name="txtSearch" Width="150" TextChanged="TxtSearch_OnTextChanged"/>
+        <CheckBox></CheckBox>
         </WrapPanel>
     </Grid>
 </Window>

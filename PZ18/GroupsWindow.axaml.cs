@@ -9,13 +9,13 @@ namespace PZ18;
 
 public partial class GroupsWindow : Window
 {
-    private string _connString = "server=localhost;database=pz18;port=3306;User Id=root;password=IGraf123*";
+    private string _connString = "server=10.10.1.24;database=pro1_4;port=3306;User Id=user_01;password=user01pro";
     private List<Groups> _groups;
     private MySqlConnection _connection;
     public GroupsWindow()
     {
         InitializeComponent();
-        string fullTable = "select * from pz18.`groups`;";
+        string fullTable = "select * from pro1_4.`groups`;";
         ShowTable(fullTable);
     }
     public void ShowTable(string sql)
