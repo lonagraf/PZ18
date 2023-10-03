@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/PZ18.csproj": {}
+    "/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/PZ18.csproj": {}
   },
   "projects": {
-    "/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/PZ18.csproj": {
+    "/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/PZ18.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/PZ18.csproj",
+        "projectUniqueName": "/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/PZ18.csproj",
         "projectName": "PZ18",
-        "projectPath": "/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/PZ18.csproj",
-        "packagesPath": "/home/student/.nuget/packages/",
-        "outputPath": "/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/obj/",
+        "projectPath": "/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/PZ18.csproj",
+        "packagesPath": "/home/KHPK.RU/student/.nuget/packages/",
+        "outputPath": "/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/student/.nuget/NuGet/NuGet.Config"
+          "/home/KHPK.RU/student/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     }

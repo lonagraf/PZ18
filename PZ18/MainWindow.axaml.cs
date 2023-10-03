@@ -22,7 +22,8 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         ShowTable(fullTable);
-        FilterComboBox.ItemsSource = _students;;
+        //FilterComboBox.ItemsSource = _students;
+        FillGroupsList();
     }
 
     public void ShowTable(string sql)
@@ -95,13 +96,34 @@ public partial class MainWindow : Window
             command.ExecuteNonQuery();
         }
     }
-    
+
+    public void FillGroupsList()
+    {
+        _groups = new List<Groups>();
+        _connection = new MySqlConnection(_connString);
+        _connection.Open();
+        MySqlCommand command = new MySqlCommand("select * from pro1_4.groups;", _connection);
+        MySqlDataReader reader = command.ExecuteReader();
+        while (reader.Read() && reader.HasRows)
+        {
+            var currentGroup = new Groups()
+            {
+                group_id = reader.GetInt32("group_id"),
+                group_name = reader.GetString("group_name"),
+            };
+            _groups.Add(currentGroup);
+        }
+        _connection.Close();
+        var groupsComboBox = this.Find<ComboBox>("FilterComboBox");
+        groupsComboBox.ItemsSource = _groups;
+    }
+
     private void FilterComboBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         var filterComboBox = (ComboBox)sender;
-        var currentGroup = filterComboBox.SelectedItem as Students;
-        var filteredGroups = _students.Where(x => x.group_name == currentGroup.group_name).ToList();
-        StudentGrid.ItemsSource = filteredGroups;
+        var currentGroup = filterComboBox.SelectedItem as Groups;
+        var filteredStudents = _students.Where(x => x.group_name == currentGroup.group_name).ToList();
+        StudentGrid.ItemsSource = filteredStudents;
     }
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
@@ -118,7 +140,8 @@ public partial class MainWindow : Window
         /*string searchSql = "select id, surname, name, group_name from pro1_4.students join pro1_4.`groups` g on g.group_id = students.group_id where surname like '%" +
                             txtSearch.Text + "%';";*/
         //ShowTable(searchSql);
-        List<Students> Search = _students.Where(x => x.surname.Contains(txtSearch.Text)).ToList();
+        List<Students> Search = _students.Where(x => x.surname.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
         StudentGrid.ItemsSource = Search;
     }
+    
 }

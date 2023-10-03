@@ -13,16 +13,16 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PZ18
-build_property.ProjectDir = /home/student/Desktop/kursovaya/PZ181/PZ18/
+build_property.ProjectDir = /home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/
 
-[/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/App.axaml]
+[/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/EditWindow.axaml]
+[/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/EditWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/GroupsWindow.axaml]
+[/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/GroupsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/student/Desktops/Desktop1/kursovaya/PZ181/PZ18/MainWindow.axaml]
+[/home/KHPK.RU/student/Рабочий стол/PZ181/PZ18/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
